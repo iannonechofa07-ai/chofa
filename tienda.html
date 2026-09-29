@@ -5,24 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tienda · Amaré Studio</title>
   <meta name="description" content="Álbumes de fotos físicos y plantillas editables en Canva. Filtrá por tipo, ocasión y precio.">
-  <meta name="theme-color" content="#F5EFE6">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Tienda · Amaré Studio">
+  <meta property="og:description" content="Álbumes de fotos físicos y plantillas editables en Canva. Filtrá por tipo, ocasión y precio.">
+  <meta property="og:image" content="assets/img/og-image.svg">
   <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260929">
 </head>
-<body data-page="tienda">
+<body data-page="tienda" class="has-hero">
   <div data-component="header"></div>
 
   <main id="contenido">
-    <section class="shop-hero container">
-      <p class="eyebrow eyebrow-slash reveal">Tienda</p>
-      <h1 class="reveal" data-shop-title>Todos los álbumes</h1>
-      <p class="reveal">Álbumes que producimos y enviamos a todo el país, y plantillas para editar en Canva a tu ritmo.</p>
+    <section class="page-banner">
+      <img src="assets/img/hero-4.svg" alt="" width="1600" height="1100">
+      <div class="page-banner-inner">
+        <nav class="banner-crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Tienda</span></nav>
+        <h1>Tienda</h1>
+      </div>
     </section>
 
-    <div class="container shop-layout">
+    <div class="container shop-layout section-tight">
       <aside>
         <form class="filters" data-filters id="filtros" aria-label="Filtros">
           <fieldset class="filter-group">
@@ -57,7 +62,11 @@
       </aside>
       <div>
         <div class="shop-toolbar">
-          <span data-result-count aria-live="polite"></span>
+          <div>
+            <p class="eyebrow eyebrow-slash" style="margin-bottom:.4em">Catálogo</p>
+            <h2 class="shop-title" data-shop-title>Todos los álbumes</h2>
+            <span data-result-count aria-live="polite"></span>
+          </div>
           <button type="button" class="btn btn-outline btn-small filters-toggle" data-filters-toggle aria-expanded="false" aria-controls="filtros">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg> Filtrar
           </button>
@@ -67,6 +76,16 @@
         </div>
       </div>
     </div>
+    <section class="cta-band">
+      <div class="container reveal">
+        <div>
+          <h2>¿No encontrás lo que <em>buscás</em>?</h2>
+          <p>También hacemos álbumes 100% a medida. Contanos tu idea.</p>
+        </div>
+        <div><a class="btn btn-ghost-light" href="contacto.html?motivo=disenio">Pedí el tuyo</a></div>
+      </div>
+    </section>
+
   </main>
 
   <div data-component="footer"></div>

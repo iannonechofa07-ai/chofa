@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Amaré Studio · Álbumes de fotos personalizados · El regalo que se queda para siempre</title>
   <meta name="description" content="Álbumes de fotos personalizados hechos a mano en Argentina y plantillas editables en Canva. El regalo que se queda para siempre.">
-  <meta name="theme-color" content="#F5EFE6">
-  <meta property="og:title" content="Amaré Studio · El regalo que se queda para siempre">
-  <meta property="og:description" content="Álbumes de fotos personalizados y plantillas editables en Canva.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Amaré Studio · Álbumes de fotos personalizados · El regalo que se queda para siempre">
+  <meta property="og:description" content="Álbumes de fotos personalizados hechos a mano en Argentina y plantillas editables en Canva. El regalo que se queda para siempre.">
   <meta property="og:image" content="assets/img/og-image.svg">
   <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260929">
 </head>
 <body data-page="home" class="has-hero">
@@ -28,13 +28,16 @@
         <figure class="hero-slide"><img src="assets/img/hero-4.svg" alt="Álbum La Cabaña con collage de fotos de viaje" width="1600" height="1100" loading="lazy"></figure>
       </div>
       <div class="container hero-content">
-        <p class="eyebrow eyebrow-slash hero-in" style="--d:100ms">Amaré Studio</p>
-        <h1 class="hero-in" style="--d:220ms">El regalo que se queda <em>para siempre</em></h1>
-        <p class="hero-sub hero-in" style="--d:360ms">Convertimos tus recuerdos en álbumes para tocar, regalar y volver a abrir una y otra vez.</p>
-        <div class="hero-ctas hero-in" style="--d:500ms">
-          <a class="btn btn-ghost-light" href="tienda.html">Ver álbumes</a>
-          <a class="btn btn-light" href="contacto.html?motivo=disenio">Armá el tuyo</a>
+        <div>
+          <p class="eyebrow eyebrow-slash hero-in" style="--d:100ms">Amaré Studio</p>
+          <h1 class="hero-in" style="--d:220ms">El regalo que se queda <em>para siempre</em></h1>
+          <p class="hero-sub hero-in" style="--d:360ms">Convertimos tus recuerdos en álbumes para tocar, regalar y volver a abrir una y otra vez.</p>
+          <div class="hero-ctas hero-in" style="--d:500ms">
+            <a class="btn btn-ghost-light" href="tienda.html">Ver álbumes</a>
+            <a class="btn btn-light" href="#contacto">Armá el tuyo</a>
+          </div>
         </div>
+        <a class="play-btn hero-in" href="#por-dentro" style="--d:650ms"><span class="play-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span>Miralo por dentro</span></a>
       </div>
       <div class="container hero-foot">
         <div class="hero-dots" role="tablist" aria-label="Imágenes del hero"></div>
@@ -42,17 +45,24 @@
       </div>
     </section>
 
-    <!-- INTRO: foto + tarjeta superpuesta ------------------------------- -->
+    <!-- BIENVENIDA: foto + tarjeta superpuesta + contadores -------------- -->
     <section class="section">
       <div class="container intro">
         <div class="intro-media reveal">
           <img src="assets/img/taller.svg" alt="Mesa de trabajo con álbumes Amaré en producción" width="1400" height="900" loading="lazy">
+          <a class="video-chip" href="#por-dentro"><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span> Ver un álbum</a>
         </div>
-        <div class="intro-card reveal" style="--d:150ms">
-          <p class="eyebrow eyebrow-slash">Amaré Studio</p>
-          <h2>Hay momentos que merecen quedarse <em>para siempre</em></h2>
-          <p>Diseñamos historias en forma de álbum para que puedas volver a lo que sentiste, cada vez que quieras. Cada página es un pedacito de vos.</p>
-          <a class="btn btn-dark" href="contacto.html?motivo=disenio">Crear mi álbum</a>
+        <div class="intro-body">
+          <div class="intro-card reveal" style="--d:120ms">
+            <p class="eyebrow eyebrow-slash">Bienvenida a Amaré</p>
+            <h2>Hay momentos que merecen quedarse <em>para siempre</em></h2>
+            <p>Diseñamos historias en forma de álbum para que puedas volver a lo que sentiste, cada vez que quieras. Cada página es un pedacito de vos.</p>
+            <a class="btn btn-dark" href="#contacto">Crear mi álbum</a>
+          </div>
+          <div class="counters reveal" style="--d:220ms">
+            <div class="counter"><strong><span data-count="4">4</span><em>+</em></strong><small>Años creando recuerdos</small></div>
+            <div class="counter"><strong><span data-count="1375">1.375</span><em>+</em></strong><small>Álbumes entregados</small></div>
+          </div>
         </div>
       </div>
     </section>
@@ -61,15 +71,13 @@
     <section class="section section-alt">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Dos formas de regalar</p>
+          <p class="eyebrow eyebrow-slash">Dos formas de regalar</p>
           <h2>Elegí cómo querés <em>armarlo</em></h2>
           <p>Lo hacemos nosotras de punta a punta, o te damos la plantilla para que lo hagas vos.</p>
         </div>
         <div class="lines">
           <article class="line-card line-card--fisico reveal">
-            <a class="line-card-media" href="tienda.html?tipo=fisico" tabindex="-1" aria-hidden="true">
-              <img src="assets/img/nuestra-historia-2.svg" alt="" width="1000" height="1250" loading="lazy">
-            </a>
+            <a class="line-card-media" href="tienda.html?tipo=fisico" tabindex="-1" aria-hidden="true"><img src="assets/img/nuestra-historia-2.svg" alt="" width="1000" height="1250" loading="lazy"></a>
             <div class="line-card-body">
               <span class="line-card-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg> Álbum físico</span>
               <h3>Lo hacemos por vos</h3>
@@ -86,9 +94,7 @@
             </div>
           </article>
           <article class="line-card line-card--digital reveal" style="--d:120ms">
-            <a class="line-card-media" href="tienda.html?tipo=digital" tabindex="-1" aria-hidden="true">
-              <img src="assets/img/nuestra-historia-canva-1.svg" alt="" width="1000" height="1250" loading="lazy">
-            </a>
+            <a class="line-card-media" href="tienda.html?tipo=digital" tabindex="-1" aria-hidden="true"><img src="assets/img/nuestra-historia-canva-1.svg" alt="" width="1000" height="1250" loading="lazy"></a>
             <div class="line-card-body">
               <span class="line-card-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Plantilla Canva</span>
               <h3>Lo editás vos</h3>
@@ -108,40 +114,58 @@
       </div>
     </section>
 
-    <!-- CÓMO FUNCIONA --------------------------------------------------- -->
-    <section class="section" id="como-funciona">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Cómo funciona</p>
-          <h2>Tres pasos y <em>listo</em></h2>
+    <!-- OCASIONES (grilla de "servicios" del kit) ------------------------ -->
+    <section class="section">
+      <div class="container services">
+        <div class="services-intro reveal">
+          <p class="eyebrow eyebrow-slash">Ocasiones</p>
+          <h2>Un álbum para cada <em>historia</em></h2>
+          <p>Elegí la ocasión y te mostramos los diseños pensados para ella.</p>
+          <a class="btn btn-dark" href="tienda.html">Ver todo</a>
         </div>
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num">01</span>
-            <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13ZM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13V4Z"/></svg></span>
-            <h3>Elegís el diseño</h3>
-            <p>Recorré la tienda y elegí el álbum o la plantilla que va con tu historia.</p>
-          </li>
-          <li class="step reveal" style="--d:120ms">
-            <span class="step-num">02</span>
-            <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><circle cx="9" cy="10.5" r="1.6"/><path d="m4 17 5-4.5 4 3.5 3-2.5 4 3.5"/></svg></span>
-            <h3>Nos mandás tus fotos</h3>
-            <p>Nos las pasás por mail o WhatsApp y lo diseñamos juntas… o editás vos la plantilla en Canva.</p>
-          </li>
-          <li class="step reveal" style="--d:240ms">
-            <span class="step-num">03</span>
-            <span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16v11H4zM3 6h18v3H3zM12 6v14M12 6c-1.5-3-5-3-5-1s3 1 5 1c2 0 5 1 5-1s-3.5-2-5 1Z"/></svg></span>
-            <h3>Recibís tu álbum</h3>
-            <p>Te llega a tu casa en caja de regalo, o lo imprimís donde quieras si es digital.</p>
-          </li>
-        </ol>
+          <a class="service-card reveal is-featured" href="tienda.html?ocasion=pareja" style="--d:0ms">
+            <img src="assets/img/col-pareja.svg" alt="" width="900" height="1150" loading="lazy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+            <h3>Pareja y aniversario</h3>
+            <p>Desde la primera cita hasta hoy, contado página por página.</p>
+            <span class="more">Ver álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="service-card reveal" href="tienda.html?ocasion=madre-padre" style="--d:90ms">
+            <img src="assets/img/col-dia-madre-padre.svg" alt="" width="900" height="1150" loading="lazy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="2.2"/><path d="M12 6.8c0-2.5 3-2.5 3 0 2.4-.8 3.3 2 1 2.9 1.6 2-.8 3.8-2.4 2.2M12 6.8c0-2.5-3-2.5-3 0-2.4-.8-3.3 2-1 2.9-1.6 2 .8 3.8 2.4 2.2M12 11.2V21M12 17c-2-2-4-2-5-1 1 2 3 2 5 1Z"/></svg>
+            <h3>Día de la Madre y del Padre</h3>
+            <p>Un homenaje con las fotos de siempre y palabras nuevas.</p>
+            <span class="more">Ver álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="service-card reveal" href="tienda.html?ocasion=egresados" style="--d:180ms">
+            <img src="assets/img/col-egresados.svg" alt="" width="900" height="1150" loading="lazy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 5l9.5 4L12 13 2.5 9Z"/><path d="M6.5 11v4.5c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V11M21 9v5"/></svg>
+            <h3>Egresados</h3>
+            <p>El viaje, la previa, el último día. Precios por grupo.</p>
+            <span class="more">Ver álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="service-card reveal" href="tienda.html?ocasion=bebe-familia" style="--d:0ms">
+            <img src="assets/img/col-bebe-familia.svg" alt="" width="900" height="1150" loading="lazy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="9.3" cy="11" r=".7"/><circle cx="14.7" cy="11" r=".7"/><path d="M9.5 14.5c1.4 1.2 3.6 1.2 5 0M12 4c-1 1.5 0 3 1.5 2.5"/></svg>
+            <h3>Bebé y familia</h3>
+            <p>El primer año, los abuelos, las sobremesas de domingo.</p>
+            <span class="more">Ver álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="service-card reveal" href="tienda.html?ocasion=viajes" style="--d:90ms">
+            <img src="assets/img/col-viajes.svg" alt="" width="900" height="1150" loading="lazy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 13.5 3 11l1.5-1.5 8 .5 4-4c1-1 2.8-1.3 3.5-.5.8.7.5 2.5-.5 3.5l-4 4 .5 8L14.5 22 12 14.5"/></svg>
+            <h3>Viajes</h3>
+            <p>Rutas, mapas y postales: tu viaje convertido en diario.</p>
+            <span class="more">Ver álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
       </div>
     </section>
 
-    <!-- COLECCIONES ----------------------------------------------------- -->
+    <!-- COLECCIONES (proyectos del kit) --------------------------------- -->
     <section class="section section-tight" id="colecciones" style="padding-bottom:0">
       <div class="collections-head watermark-wrap reveal">
         <span class="watermark" aria-hidden="true">AMARÉ STUDIO</span>
+        <p class="eyebrow eyebrow-slash">Tienda</p>
         <h2>Nuestras colecciones</h2>
         <p>Ideas hechas álbum, recuerdos vueltos diseño: momentos convertidos en algo que queda para siempre.</p>
       </div>
@@ -150,11 +174,60 @@
       <p class="collections-more"><a class="link-arrow" href="tienda.html" data-collection-more><span>Ver toda la tienda</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
     </section>
 
+    <!-- EQUIPO ---------------------------------------------------------- -->
+    <section class="section">
+      <div class="container team">
+        <div class="team-intro reveal">
+          <p class="eyebrow eyebrow-slash">Nosotras</p>
+          <h2>Dos hermanas detrás de <em>cada álbum</em></h2>
+          <p>Somos Sofi y Cande. Diseñamos, imprimimos y encuadernamos cada álbum en nuestro taller de Tigre, y te acompañamos por WhatsApp desde que elegís el diseño hasta que lo abrís.</p>
+          <a class="btn btn-dark" href="nosotras.html">Conocenos</a>
+        </div>
+        <div class="team-cards">
+          <article class="team-card reveal">
+            <div class="team-card-img"><img src="assets/img/hermana-1.svg" alt="Sofi, cofundadora de Amaré Studio" width="800" height="1000" loading="lazy"></div>
+            <div class="team-card-name"><strong>Sofi</strong><small>Diseño y edición</small></div>
+          </article>
+          <article class="team-card reveal" style="--d:120ms">
+            <div class="team-card-img"><img src="assets/img/hermana-2.svg" alt="Cande, cofundadora de Amaré Studio" width="800" height="1000" loading="lazy"></div>
+            <div class="team-card-name"><strong>Cande</strong><small>Producción y envíos</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIANZA (fila de logos del kit) ------------------------------- -->
+    <section class="trust" aria-label="Por qué comprar en Amaré">
+      <div class="container">
+        <ul class="trust-list">
+          <li class="reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><strong>Envíos a todo el país</strong><span>Gratis desde $120.000</span></div></li>
+          <li class="reveal" style="--d:100ms"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><strong>Pago seguro</strong><span>Mercado Pago, hasta 3 cuotas</span></div></li>
+          <li class="reveal" style="--d:200ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4-2L4 14.8a1.5 1.5 0 0 1 2.2-2L8 14.5"/></svg><div><strong>Hecho a mano en Argentina</strong><span>En nuestro taller de Tigre</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA --------------------------------------------------- -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow-slash">Cómo funciona</p>
+          <h2>Tres pasos y <em>listo</em></h2>
+          <p>Del celular a tus manos, sin complicaciones.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step-num" aria-hidden="true">01</span><h3>Elegís el diseño</h3><p>Recorré la tienda y elegí el álbum o la plantilla que va con tu historia.</p></li>
+          <li class="step reveal" style="--d:120ms"><span class="step-num" aria-hidden="true">02</span><h3>Nos mandás tus fotos</h3><p>Nos las pasás por mail o WhatsApp y lo diseñamos juntas… o editás vos la plantilla en Canva.</p></li>
+          <li class="step reveal" style="--d:240ms"><span class="step-num" aria-hidden="true">03</span><h3>Recibís tu álbum</h3><p>Te llega a tu casa en caja de regalo, o lo imprimís donde quieras si es digital.</p></li>
+        </ol>
+      </div>
+    </section>
+
     <!-- FLIPBOOK -------------------------------------------------------- -->
-    <section class="section section-alt" style="margin-top:clamp(72px,11vw,140px)">
+    <section class="section section-alt" id="por-dentro">
       <div class="container flip-layout">
         <div class="flip-copy reveal">
-          <p class="eyebrow">Mirá por dentro</p>
+          <p class="eyebrow eyebrow-slash">Mirá por dentro</p>
           <h2>Pasá las páginas de <em>Nuestra Historia</em></h2>
           <p>Así se ve un álbum Amaré: fotos grandes, mucho aire y pequeños textos que cuentan lo que las fotos no dicen.</p>
           <div class="gold-rule"></div>
@@ -191,70 +264,39 @@
       </div>
     </section>
 
-    <!-- TESTIMONIOS ----------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Lo que nos cuentan</p>
-          <h2>Regalos que <em>emocionan</em></h2>
+    <!-- TESTIMONIOS (foto + slider) ------------------------------------- -->
+    <section class="testi">
+      <div class="testi-media reveal"><img src="assets/img/hero-3.svg" alt="Álbum Mi primer año abierto sobre una mesa" width="1600" height="1100" loading="lazy"></div>
+      <div class="testi-body reveal" style="--d:120ms">
+        <p class="eyebrow eyebrow-slash">Testimonios</p>
+        <h2>Regalos que <em>emocionan</em></h2>
+        <p>Lo que nos cuentan quienes ya tienen su álbum Amaré.</p>
+        <div class="testi-slider" data-testi>
+            <figure class="testi-slide is-active">
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote>“Se lo regalé a mi novio por nuestro aniversario y lloramos los dos. La calidad es increíble y el trato, más.”</blockquote>
+              <figcaption class="testi-author"><img src="assets/img/avatar-1.svg" alt="" width="56" height="56" loading="lazy"><span><strong>Camila R.</strong><small>Nuestra Historia · CABA</small></span><span class="quote-mark" aria-hidden="true">”</span></figcaption>
+            </figure>
+            <figure class="testi-slide">
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote>“Compré la plantilla de Mamá y la armé en una tarde desde el celu. Quedó hermosa impresa, parece de librería.”</blockquote>
+              <figcaption class="testi-author"><img src="assets/img/avatar-2.svg" alt="" width="56" height="56" loading="lazy"><span><strong>Lucía M.</strong><small>Plantilla Mamá · Córdoba</small></span><span class="quote-mark" aria-hidden="true">”</span></figcaption>
+            </figure>
+            <figure class="testi-slide">
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote>“El álbum del primer año de Benja es lo más lindo que tenemos en casa. Las chicas me ayudaron a elegir cada foto.”</blockquote>
+              <figcaption class="testi-author"><img src="assets/img/avatar-3.svg" alt="" width="56" height="56" loading="lazy"><span><strong>Florencia G.</strong><small>Mi Primer Año · Tigre</small></span><span class="quote-mark" aria-hidden="true">”</span></figcaption>
+            </figure>
+          <div class="testi-dots"></div>
         </div>
-        <div class="testimonials">
-          <figure class="testimonial reveal">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote>“Se lo regalé a mi novio por nuestro aniversario y lloramos los dos. La calidad es increíble y el trato, más.”</blockquote>
-            <figcaption><img src="assets/img/avatar-1.svg" alt="" width="52" height="52" loading="lazy"><span><strong>Camila R.</strong><small>Nuestra Historia · CABA</small></span></figcaption>
-          </figure>
-          <figure class="testimonial reveal" style="--d:120ms">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote>“Compré la plantilla de Mamá y la armé en una tarde desde el celu. Quedó hermosa impresa, parece de librería.”</blockquote>
-            <figcaption><img src="assets/img/avatar-2.svg" alt="" width="52" height="52" loading="lazy"><span><strong>Lucía M.</strong><small>Plantilla Mamá · Córdoba</small></span></figcaption>
-          </figure>
-          <figure class="testimonial reveal" style="--d:240ms">
-            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
-            <blockquote>“El álbum del primer año de Benja es lo más lindo que tenemos en casa. Las chicas me ayudaron a elegir cada foto.”</blockquote>
-            <figcaption><img src="assets/img/avatar-3.svg" alt="" width="52" height="52" loading="lazy"><span><strong>Florencia G.</strong><small>Mi Primer Año · Tigre</small></span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- BANDA DE CONFIANZA ---------------------------------------------- -->
-    <section class="trust" aria-label="Por qué comprar en Amaré">
-      <div class="container">
-        <ul class="trust-list">
-          <li class="reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><strong>Envíos a todo el país</strong><span>Gratis desde $120.000</span></div></li>
-          <li class="reveal" style="--d:100ms"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><strong>Pago seguro</strong><span>Mercado Pago, hasta 3 cuotas</span></div></li>
-          <li class="reveal" style="--d:200ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4-2L4 14.8a1.5 1.5 0 0 1 2.2-2L8 14.5"/></svg><div><strong>Hecho a mano en Argentina</strong><span>En nuestro taller de Tigre</span></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- INSTAGRAM ------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <div class="ig-head reveal">
-          <div>
-            <p class="eyebrow">Seguinos</p>
-            <h2>@amarestudio</h2>
-          </div>
-          <a class="link-arrow" href="https://instagram.com/amarestudio" target="_blank" rel="noopener">Ver Instagram <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-      <div class="ig-grid reveal">
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 1"><img src="assets/img/ig-1.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 2"><img src="assets/img/ig-2.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 3"><img src="assets/img/ig-3.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 4"><img src="assets/img/ig-4.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 5"><img src="assets/img/ig-5.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a class="ig-item" href="https://instagram.com/amarestudio" target="_blank" rel="noopener" aria-label="Publicación de Instagram 6"><img src="assets/img/ig-6.svg" alt="" width="800" height="800" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
       </div>
     </section>
 
     <!-- NEWSLETTER ------------------------------------------------------ -->
-    <section class="section" style="padding-top:0">
+    <section class="section">
       <div class="container">
         <div class="newsletter reveal">
-          <p class="eyebrow">Newsletter</p>
+          <p class="eyebrow eyebrow-slash">Newsletter</p>
           <h2>Sumate y recibí <em>10% OFF</em> en tu primer álbum</h2>
           <p>Ideas de regalo, lanzamientos y fechas especiales. Nada de spam, prometido.</p>
           <form class="newsletter-form" data-newsletter novalidate>
@@ -266,6 +308,41 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTACTO (Get in touch del kit) --------------------------------- -->
+    <section class="contact-block" id="contacto">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow eyebrow-slash">Contacto</p>
+          <h2>Escribinos y <em>armemos</em> el tuyo</h2>
+          <p class="contact-sub">Contanos para quién es, la ocasión y cuántas fotos tenés. Respondemos de lunes a viernes de 9 a 18 h.</p>
+          <ul class="contact-list">
+            <li><a href="https://wa.me/5491100000000" data-whatsapp target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20Z"/></svg> WhatsApp · 11 0000-0000</a></li>
+            <li><a href="mailto:hola@amarestudio.com.ar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg> hola@amarestudio.com.ar</a></li>
+            <li><a href="https://instagram.com/amarestudio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg> @amarestudio</a></li>
+            <li><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Tigre, Buenos Aires · envíos a todo el país</span></li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" data-contact-form novalidate style="--d:120ms">
+          <div class="grid-2">
+            <div class="field"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" required autocomplete="name"></div>
+            <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="c-tel">WhatsApp <span class="optional">(opcional)</span></label><input id="c-tel" name="telefono" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="c-motivo">Motivo</label>
+              <select id="c-motivo" name="motivo">
+                <option value="disenio">Quiero armar mi álbum</option>
+                <option value="pedido">Consulta sobre un pedido</option>
+                <option value="grupos">Precios para grupos / egresados</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required placeholder="Contanos para quién es, la ocasión y cuántas fotos tenés más o menos."></textarea></div>
+          <button class="btn btn-primary" type="submit"><span class="btn-label">Enviar mensaje</span></button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <div data-component="footer"></div>
@@ -278,6 +355,7 @@
   <script defer src="js/ui/cart-drawer.js?v=20260929"></script>
   <script defer src="js/ui/effects.js?v=20260929"></script>
   <script defer src="js/pages/home.js?v=20260929"></script>
+  <script defer src="js/pages/contact.js?v=20260929"></script>
   <script defer src="js/main.js?v=20260929"></script>
 </body>
 </html>

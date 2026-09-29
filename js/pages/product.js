@@ -22,7 +22,7 @@
 
   function notFound(root) {
     root.innerHTML =
-      '<div class="container empty-state page-top"><p class="serif">No encontramos este álbum.</p>' +
+      '<div class="container empty-state section-tight"><p class="serif">No encontramos este álbum.</p>' +
       '<a class="btn btn-primary" href="tienda.html">Ir a la tienda</a></div>';
   }
 
@@ -94,10 +94,13 @@
       return '<figure class="gallery-slide" data-zoom><img src="' + src + '" alt="' + ui.esc(p.name) + " – imagen " + (i + 1) + '" width="1000" height="1250"' + (i ? ' loading="lazy"' : "") + "></figure>";
     }).join("");
 
+    var bTitle = document.querySelector("[data-banner-title]");
+    var bCrumb = document.querySelector("[data-banner-crumb]");
+    if (bTitle) bTitle.textContent = p.name;
+    if (bCrumb) bCrumb.innerHTML = '<a href="tienda.html?tipo=' + p.type + '">' + type.label + '</a> <span aria-hidden="true">/</span> ' + ui.esc(p.name);
+
     root.innerHTML =
-      '<div class="container page-top">' +
-      '  <nav class="breadcrumb" aria-label="Migas de pan"><a href="index.html">Inicio</a><span>/</span><a href="tienda.html">Tienda</a><span>/</span>' +
-      '    <a href="tienda.html?tipo=' + p.type + '">' + type.label + '</a><span>/</span><span aria-current="page">' + ui.esc(p.name) + "</span></nav>" +
+      '<div class="container section-tight">' +
       '  <div class="product-layout">' +
       '    <div class="product-gallery reveal">' +
       '      <div class="gallery-track" data-gallery>' + slides + "</div>" +
@@ -131,7 +134,7 @@
       "  </div>" +
       "</div>" +
       '<section class="section section-related"><div class="container">' +
-      '  <div class="section-head reveal"><p class="eyebrow">Te puede gustar</p><h2>También elegidos</h2></div>' +
+      '  <div class="section-head reveal"><p class="eyebrow eyebrow-slash">Te puede gustar</p><h2>También <em>elegidos</em></h2></div>' +
       '  <div class="product-grid" data-related></div>' +
       "</div></section>";
 

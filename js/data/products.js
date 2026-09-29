@@ -34,10 +34,10 @@
       label: "Color de tapa",
       type: "swatch",
       values: [
-        { id: "arena", label: "Arena", swatch: "#D8C3A5", priceDelta: 0 },
-        { id: "rosa", label: "Rosa empolvado", swatch: "#E8C4C0", priceDelta: 0 },
-        { id: "chocolate", label: "Chocolate", swatch: "#4A3228", priceDelta: 0 },
-        { id: "salvia", label: "Salvia", swatch: "#A7B09A", priceDelta: 0 }
+        { id: "negro", label: "Negro", swatch: "#1C1C1C", priceDelta: 0 },
+        { id: "rosa", label: "Rosa", swatch: "#DE93BE", priceDelta: 0 },
+        { id: "lino", label: "Lino natural", swatch: "#E7E3DC", priceDelta: 0 },
+        { id: "perla", label: "Gris perla", swatch: "#BDB9B4", priceDelta: 0 }
       ]
     },
     {

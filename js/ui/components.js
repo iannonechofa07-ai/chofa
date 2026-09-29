@@ -46,15 +46,17 @@
     download: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>',
     whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true" class="icon-fill"><path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 5-1.3A9.8 9.8 0 1 0 12 2.2Zm0 17.9a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.5-6c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true" class="icon-fill"><path d="M8 5.5v13l11-6.5z"/></svg>',
     check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-10"/></svg>',
     hand: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4-2L4 14.8a1.5 1.5 0 0 1 2.2-2L8 14.5"/></svg>'
   };
 
   var NAV = [
     { href: "index.html", label: "Inicio", id: "home" },
+    { href: "nosotras.html", label: "Nosotras", id: "nosotras" },
     { href: "tienda.html", label: "Tienda", id: "tienda" },
     { href: "tienda.html?tipo=digital", label: "Plantillas Canva", id: "plantillas" },
-    { href: "nosotras.html", label: "Nosotras", id: "nosotras" },
     { href: "preguntas-frecuentes.html", label: "Preguntas", id: "faq" },
     { href: "contacto.html", label: "Contacto", id: "contacto" }
   ];
@@ -72,13 +74,11 @@
 
     el.outerHTML =
       '<header class="site-header" id="site-header">' +
-      '  <div class="announcement"><p>Envíos a todo el país · <strong>10% OFF</strong> en tu primer álbum sumándote al newsletter</p></div>' +
       '  <div class="header-bar container">' +
       '    <button class="icon-btn menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">' + ICONS.menu + "</button>" +
       '    <a class="logo" href="index.html" aria-label="Amaré Studio, inicio">Amaré <em>Studio</em></a>' +
       '    <nav class="main-nav" aria-label="Principal"><ul>' + links + "</ul></nav>" +
       '    <div class="header-actions">' +
-      '      <a class="btn btn-small btn-outline header-cta" href="contacto.html?motivo=disenio">Armá el tuyo</a>' +
       '      <button class="icon-btn cart-toggle" type="button" aria-label="Abrir carrito" aria-controls="cart-drawer">' + ICONS.bag +
       '        <span class="cart-count" data-cart-count aria-live="polite">0</span></button>' +
       "    </div>" +
@@ -94,39 +94,47 @@
   function renderFooter(el) {
     if (el.children.length) return;
     var year = new Date().getFullYear();
+    var ig = [1, 2, 3, 4, 5, 6].map(function (i) {
+      return '<a href="' + cfg.instagram + '" target="_blank" rel="noopener" aria-label="Publicación de Instagram ' + i + '">' +
+        '<img src="assets/img/ig-' + i + '.svg" alt="" width="800" height="800" loading="lazy"></a>';
+    }).join("");
     el.outerHTML =
       '<footer class="site-footer">' +
-      '  <div class="container footer-grid">' +
-      '    <div class="footer-brand">' +
+      '  <div class="container">' +
+      '    <div class="footer-top">' +
       '      <a class="logo logo-large" href="index.html">Amaré <em>Studio</em></a>' +
-      '      <p class="footer-tagline">' + cfg.tagline + ".</p>" +
+      '      <p class="footer-tagline">Álbumes de fotos personalizados, hechos a mano en Argentina. ' + cfg.tagline + ".</p>" +
       '      <div class="footer-social">' +
       '        <a class="icon-btn" href="' + cfg.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + ICONS.instagram + "</a>" +
       '        <a class="icon-btn" href="' + whatsappUrl() + '" target="_blank" rel="noopener" aria-label="WhatsApp">' + ICONS.whatsapp + "</a>" +
+      '        <a class="icon-btn" href="mailto:' + cfg.email + '" aria-label="Email">' + ICONS.mail + "</a>" +
       "      </div>" +
       "    </div>" +
-      '    <div class="footer-col"><h3>Tienda</h3><ul>' +
-      '      <li><a href="tienda.html?tipo=fisico">Álbumes físicos</a></li>' +
-      '      <li><a href="tienda.html?tipo=digital">Plantillas Canva</a></li>' +
-      '      <li><a href="tienda.html">Ver todo</a></li>' +
-      '      <li><a href="checkout.html">Checkout</a></li>' +
-      "    </ul></div>" +
-      '    <div class="footer-col"><h3>Amaré</h3><ul>' +
-      '      <li><a href="index.html">Inicio</a></li>' +
-      '      <li><a href="nosotras.html">Nosotras</a></li>' +
-      '      <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>' +
-      '      <li><a href="contacto.html">Contacto</a></li>' +
-      "    </ul></div>" +
-      '    <div class="footer-col"><h3>Medios de pago</h3>' +
-      '      <ul class="payments" aria-label="Medios de pago aceptados">' +
-      "        <li>Mercado Pago</li><li>Visa</li><li>Mastercard</li><li>Amex</li><li>Transferencia</li>" +
-      "      </ul>" +
-      '      <p class="footer-note">Hasta 3 cuotas sin interés con Mercado Pago.</p>' +
+      '    <div class="footer-grid">' +
+      '      <div class="footer-col"><h3>Páginas</h3><ul>' +
+      '        <li><a href="index.html">Inicio</a></li>' +
+      '        <li><a href="nosotras.html">Nosotras</a></li>' +
+      '        <li><a href="tienda.html">Tienda</a></li>' +
+      '        <li><a href="contacto.html">Contacto</a></li>' +
+      "      </ul></div>" +
+      '      <div class="footer-col"><h3>Ayuda</h3><ul>' +
+      '        <li><a href="tienda.html?tipo=fisico">Álbumes físicos</a></li>' +
+      '        <li><a href="tienda.html?tipo=digital">Plantillas Canva</a></li>' +
+      '        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>' +
+      '        <li><a href="checkout.html">Checkout</a></li>' +
+      "      </ul></div>" +
+      '      <div class="footer-col"><h3>Medios de pago</h3>' +
+      '        <ul class="payments" aria-label="Medios de pago aceptados">' +
+      "          <li>Mercado Pago</li><li>Visa</li><li>Mastercard</li><li>Amex</li><li>Transferencia</li>" +
+      "        </ul>" +
+      '        <p class="footer-note">Hasta 3 cuotas sin interés con Mercado Pago.</p>' +
+      "      </div>" +
+      '      <div class="footer-col footer-ig"><h3>Instagram ' + cfg.instagramHandle + '</h3><div class="footer-ig-grid">' + ig + "</div></div>" +
       "    </div>" +
-      "  </div>" +
-      '  <div class="container footer-bottom">' +
-      "    <p>Hecho con amor en " + cfg.location + " " + '<span class="heart">' + ICONS.heart + "</span></p>" +
-      "    <p>© " + year + " Amaré Studio. Todos los derechos reservados.</p>" +
+      '    <div class="footer-bottom">' +
+      "      <p>Hecho con amor en " + cfg.location + ' <span class="heart">' + ICONS.heart + "</span></p>" +
+      "      <p>© " + year + " Amaré Studio. Todos los derechos reservados.</p>" +
+      "    </div>" +
       "  </div>" +
       "</footer>";
   }

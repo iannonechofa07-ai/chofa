@@ -22,9 +22,9 @@ SERIF = "'Cormorant Garamond', 'Fraunces', Georgia, 'Times New Roman', serif"
 
 CREAM = "#F5EFE6"
 LINEN = "#EDE3D6"
-ROSE = "#E8C4C0"
-BROWN = "#4A3228"
-GOLD = "#B8975A"
+ROSE = "#EBA6CB"
+BROWN = "#1C1C1C"
+GOLD = "#DC8AB9"
 
 
 # --------------------------------------------------------------------------
@@ -105,7 +105,7 @@ def scene_grad(uid):
     def cap(x, y, a, c):
         return (f'<g transform="translate({x} {y}) rotate({a})"><path d="M-12 0 L0 -6 L12 0 L0 6Z" fill="{c}"/>'
                 f'<rect x="-6" y="2" width="12" height="6" rx="1.5" fill="{c}"/>'
-                f'<path d="M8 1 V10" stroke="#C9A565" stroke-width="1.2"/></g>')
+                f'<path d="M8 1 V10" stroke="#E08DBC" stroke-width="1.2"/></g>')
     return (_sky(uid, "#DDE3E2", "#F4ECE2")
             + cap(40, 36, -18, "#3E2C25") + cap(92, 22, 14, "#4A3228") + cap(128, 48, -8, "#3E2C25")
             + cap(66, 58, 24, "#5A4034")
@@ -192,7 +192,20 @@ def defs_common(uid):
 </defs>'''
 
 
+NEUTRALS = ["#F3F2F0", "#EDEBE8", "#F6F5F3", "#E9E7E4"]
+COVER_MAP = {
+    "#B98B84": "#DE93BE", "#E3C2BC": "#F2C9DE", "#D9B2A8": "#F2C9DE", "#D7A8A2": "#F2C9DE",
+    "#6E5A4F": "#1E1E1E", "#4A3228": "#1E1E1E", "#3F3A36": "#1E1E1E", "#9C7B6B": "#2A2A2A",
+    "#9A7B63": "#BDB9B4", "#8A6B5C": "#2A2A2A", "#8C9A94": "#BDB9B4",
+}
+
+
+def cover_color(c):
+    return COVER_MAP.get(c, c)
+
+
 def background(uid, w, h, color):
+    color = NEUTRALS[sum(ord(ch) for ch in color) % len(NEUTRALS)]
     return (f'<rect width="{w}" height="{h}" fill="{color}"/>'
             f'<rect width="{w}" height="{h}" fill="{color}" filter="url(#{uid}grain)"/>')
 
@@ -205,7 +218,7 @@ def window_light(uid, w, h, angle=-28):
     return (f'<g opacity=".26" filter="url(#{uid}soft)" transform="rotate({angle} {w/2} {h/2})">{bars}</g>')
 
 
-def sprig(x, y, scale=1.0, rot=0, color="#A58B6A", bloom="#E8C4C0"):
+def sprig(x, y, scale=1.0, rot=0, color="#9C9A92", bloom="#EBA6CB"):
     rnd = random.Random(int(x * 7 + y))
     leaves = []
     for i in range(9):
@@ -247,12 +260,13 @@ def open_album(uid, cx, cy, pw, ph, layout, cover="#8A6B5C", rot=0, title=None, 
     """Álbum abierto centrado en (cx, cy). pw/ph = tamaño de UNA página."""
     x0, y0 = -pw, -ph / 2
     m = pw * 0.09  # margen interno
+    cover = cover_color(cover)
     parts = [f'<g transform="translate({cx} {cy}) rotate({rot})" filter="url(#{uid}shadow)">']
     # tapa (se asoma por los bordes)
     parts.append(f'<rect x="{x0-14}" y="{y0-12}" width="{pw*2+28}" height="{ph+24}" rx="10" fill="{cover}"/>')
     # páginas (efecto de hojas apiladas)
     for i in (3, 2, 1):
-        parts.append(f'<rect x="{x0 - i*1.5}" y="{y0 + i}" width="{pw*2 + i*3}" height="{ph}" rx="3" fill="#EFE7DA"/>')
+        parts.append(f'<rect x="{x0 - i*1.5}" y="{y0 + i}" width="{pw*2 + i*3}" height="{ph}" rx="3" fill="#E6E4E0"/>')
     parts.append(f'<rect x="{x0}" y="{y0}" width="{pw}" height="{ph}" rx="2" fill="#FFFCF6"/>')
     parts.append(f'<rect x="0" y="{y0}" width="{pw}" height="{ph}" rx="2" fill="#FFFDF8"/>')
 
@@ -269,14 +283,14 @@ def open_album(uid, cx, cy, pw, ph, layout, cover="#8A6B5C", rot=0, title=None, 
         if title:
             parts.append(f'<text x="{tx}" y="{ty}" font-family="{SERIF}" font-style="italic" font-size="{pw*0.075:.0f}" fill="{BROWN}">{title}</text>')
         for k in range(3):
-            parts.append(f'<rect x="{tx}" y="{ty + pw*0.05 + k*pw*0.035:.1f}" width="{pw*(0.26 - k*0.05):.1f}" height="3" rx="1.5" fill="#CDBBAA"/>')
+            parts.append(f'<rect x="{tx}" y="{ty + pw*0.05 + k*pw*0.035:.1f}" width="{pw*(0.26 - k*0.05):.1f}" height="3" rx="1.5" fill="#CFCBC6"/>')
     elif style == "full":
         # Foto panorámica que cruza el lomo.
         parts.append(photo(kinds[0], x0 + m, y0 + m, pw*2 - 2*m, ph - 2*m, uid + "a"))
     elif style == "text":
         # Izquierda: título tipográfico. Derecha: foto con marco.
         parts.append(f'<text x="{x0 + pw/2}" y="{y0 + ph*0.44}" text-anchor="middle" font-family="{SERIF}" font-size="{pw*0.12:.0f}" fill="{BROWN}">{title or "Nuestra historia"}</text>')
-        parts.append(f'<text x="{x0 + pw/2}" y="{y0 + ph*0.52}" text-anchor="middle" font-family="{SERIF}" font-style="italic" font-size="{pw*0.06:.0f}" fill="#8A6B5C">{subtitle or "capítulo uno"}</text>')
+        parts.append(f'<text x="{x0 + pw/2}" y="{y0 + ph*0.52}" text-anchor="middle" font-family="{SERIF}" font-style="italic" font-size="{pw*0.06:.0f}" fill="#777">{subtitle or "capítulo uno"}</text>')
         parts.append(f'<rect x="{x0 + pw/2 - pw*0.12}" y="{y0 + ph*0.58}" width="{pw*0.24}" height="2" fill="{GOLD}"/>')
         parts.append(photo(kinds[0], m*1.3, y0 + m*1.3, pw - 2.6*m, ph - 2.6*m, uid + "a"))
     elif style == "grid":
@@ -301,9 +315,12 @@ def open_album(uid, cx, cy, pw, ph, layout, cover="#8A6B5C", rot=0, title=None, 
 
 def closed_album(uid, cx, cy, w, h, cover, title, subtitle="", rot=0, window_kind=None, text_color="#F5EFE6"):
     x0, y0 = -w / 2, -h / 2
+    cover = cover_color(cover)
+    if cover in ("#F2C9DE", "#BDB9B4"):
+        text_color = BROWN
     parts = [f'<g transform="translate({cx} {cy}) rotate({rot})" filter="url(#{uid}shadow)">']
     # canto de hojas
-    parts.append(f'<rect x="{x0+8}" y="{y0+6}" width="{w}" height="{h}" rx="8" fill="#EDE4D6"/>')
+    parts.append(f'<rect x="{x0+8}" y="{y0+6}" width="{w}" height="{h}" rx="8" fill="#E6E4E0"/>')
     parts.append(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="8" fill="{cover}"/>')
     parts.append(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="8" fill="{cover}" filter="url(#{uid}grain)"/>')
     # lomo
@@ -336,12 +353,12 @@ def tablet_template(uid, cx, cy, w, layout, title):
     b = w * 0.035
     sw, sh = w - 2*b, h - 2*b
     parts = [f'<g transform="translate({cx} {cy})" filter="url(#{uid}shadow)">']
-    parts.append(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="{w*0.04}" fill="#2B211C"/>')
+    parts.append(f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="{w*0.04}" fill="#1C1C1C"/>')
     parts.append(f'<rect x="{x0+b}" y="{y0+b}" width="{sw}" height="{sh}" rx="{w*0.012}" fill="#F3EEE7"/>')
     # barra de herramientas del editor (genérica)
     parts.append(f'<rect x="{x0+b}" y="{y0+b}" width="{sw}" height="{sh*0.08}" fill="#FFFFFF"/>')
     for i in range(4):
-        parts.append(f'<rect x="{x0 + b + sh*0.03 + i*sh*0.09}" y="{y0 + b + sh*0.025}" width="{sh*0.06}" height="{sh*0.03}" rx="3" fill="#E4D8CB"/>')
+        parts.append(f'<rect x="{x0 + b + sh*0.03 + i*sh*0.09}" y="{y0 + b + sh*0.025}" width="{sh*0.06}" height="{sh*0.03}" rx="3" fill="#E5E3E0"/>')
     parts.append(f'<rect x="{x0 + b + sw - sh*0.22}" y="{y0 + b + sh*0.018}" width="{sh*0.19}" height="{sh*0.045}" rx="{sh*0.022}" fill="{BROWN}"/>')
     # pliego
     pw = sw * 0.38
@@ -369,7 +386,7 @@ def printed_sheet(uid, cx, cy, w, kind, rot):
     return (f'<g transform="translate({cx} {cy}) rotate({rot})" filter="url(#{uid}shadow)">'
             f'<rect x="{-w/2}" y="{-h/2}" width="{w}" height="{h}" fill="#FFFDF8"/>'
             + photo(kind, -w/2 + w*0.08, -h/2 + w*0.08, w*0.84, h*0.7, uid + f"p{kind}")
-            + f'<rect x="{-w*0.2}" y="{h*0.34}" width="{w*0.4}" height="3" fill="#CDBBAA"/></g>')
+            + f'<rect x="{-w*0.2}" y="{h*0.34}" width="{w*0.4}" height="3" fill="#CFCBC6"/></g>')
 
 
 # --------------------------------------------------------------------------
@@ -506,19 +523,24 @@ def portrait(uid, W, H, bg, skin, hair, top, hair_long=True):
 
 def build_people():
     people = [
-        ("avatar-1", "#E8C4C0", "#E9C3A6", "#5A3B2C", "#F5EFE6"),
-        ("avatar-2", "#EADFCF", "#C99A7A", "#2F2220", "#B98B84"),
-        ("avatar-3", "#E4D6C8", "#F0CDB2", "#9C6B45", "#4A3228"),
+        ("avatar-1", "#F4D3E4", "#E9C3A6", "#5A3B2C", "#F5EFE6"),
+        ("avatar-2", "#EDEBE8", "#C99A7A", "#2F2220", "#DE93BE"),
+        ("avatar-3", "#E9E7E4", "#F0CDB2", "#9C6B45", "#1E1E1E"),
     ]
     for name, bg, skin, hair, top in people:
         uid = name.replace("-", "")
         write(f"{name}.svg", svg(400, 400, portrait(uid, 400, 400, bg, skin, hair, top), uid, "Retrato de clienta"))
 
+    for name, bg, skin, hair, top in [("hermana-1", "#F1EFEC", "#EBC6AA", "#5A3B2C", "#EBA6CB"),
+                                      ("hermana-2", "#ECEAE7", "#E2B998", "#2A2220", "#1E1E1E")]:
+        uid = name.replace("-", "")
+        write(f"{name}.svg", svg(800, 1000, portrait(uid, 800, 1000, bg, skin, hair, top), uid, "Retrato de una de las fundadoras"))
+
     # Nosotras: dos hermanas con un álbum
     W, H = 1000, 1250
     uid = "sisters"
     body = background(uid, W, H, "#EDE2D5") + window_light(uid, W, H, -28)
-    for cx, skin, hair, top in [(340, "#EBC6AA", "#5A3B2C", "#E8C4C0"), (660, "#E2B998", "#3A2A24", "#F5EFE6")]:
+    for cx, skin, hair, top in [(340, "#EBC6AA", "#5A3B2C", "#EBA6CB"), (660, "#E2B998", "#3A2A24", "#1E1E1E")]:
         body += f'<path d="M{cx-200} {H} Q{cx-190} {H*0.62} {cx} {H*0.6} Q{cx+190} {H*0.62} {cx+200} {H}Z" fill="{top}"/>'
         body += f'<path d="M{cx-120} {H*0.66} Q{cx-140} {H*0.3} {cx} {H*0.26} Q{cx+140} {H*0.3} {cx+120} {H*0.66}Z" fill="{hair}"/>'
         body += f'<rect x="{cx-30}" y="{H*0.46}" width="60" height="{H*0.16}" fill="{skin}"/>'
@@ -548,8 +570,8 @@ def build_flipbook_scenes():
 
 def build_favicon():
     fav = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-           '<rect width="64" height="64" rx="14" fill="#4A3228"/>'
-           '<rect x="5" y="5" width="54" height="54" rx="10" fill="none" stroke="#C9A565" stroke-width="1.2" opacity=".8"/>'
+           '<rect width="64" height="64" rx="14" fill="#1C1C1C"/>'
+           '<rect x="5" y="5" width="54" height="54" rx="10" fill="none" stroke="#E08DBC" stroke-width="1.2" opacity=".8"/>'
            f'<text x="32" y="42" text-anchor="middle" font-family="{SERIF}" font-size="28" fill="#F5EFE6" letter-spacing="1">AS</text></svg>')
     (OUT.parent / "favicon.svg").write_text(fav, encoding="utf-8")
     print("  ✓ favicon.svg")
@@ -558,7 +580,7 @@ def build_favicon():
 def build_og():
     uid = "og"
     W, H = 1200, 630
-    body = background(uid, W, H, "#F5EFE6") + window_light(uid, W, H, -30)
+    body = background(uid, W, H, "#FFFFFF") + window_light(uid, W, H, -30)
     body += open_album(uid, 860, 330, 230, 300, dict(style="classic", photos=["couple", "sunset", "flowers"]), "#B98B84", -5)
     body += f'<text x="80" y="250" font-family="{SERIF}" font-size="64" fill="{BROWN}">Amaré Studio</text>'
     body += f'<rect x="80" y="280" width="90" height="2" fill="{GOLD}"/>'

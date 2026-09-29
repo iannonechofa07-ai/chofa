@@ -19,11 +19,15 @@
     safe(A.effects.initHeroCarousel, "carrusel");
     safe(A.effects.initFlipbook, "flipbook");
     safe(A.effects.initNewsletter, "newsletter");
+    safe(A.effects.initCounters, "contadores");
+    safe(A.effects.initTestimonials, "testimonios");
     safe(function () { A.effects.initAccordions(); }, "acordeones");
     safe(A.effects.initButtonFeedback, "botones");
 
     var page = document.body.getAttribute("data-page");
     if (page && A.pages && A.pages[page]) safe(A.pages[page], "página " + page);
+    // El bloque de contacto aparece en varias páginas (home, contacto)
+    if (page !== "contacto" && A.pages && A.pages.contacto) safe(A.pages.contacto, "formulario de contacto");
 
     safe(function () { A.effects.initReveal(); }, "reveal");
   }

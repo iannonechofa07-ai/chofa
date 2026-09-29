@@ -5,67 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Nosotras · Amaré Studio</title>
   <meta name="description" content="Somos dos hermanas de Tigre que convierten recuerdos en álbumes hechos a mano.">
-  <meta name="theme-color" content="#F5EFE6">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Nosotras · Amaré Studio">
+  <meta property="og:description" content="Somos dos hermanas de Tigre que convierten recuerdos en álbumes hechos a mano.">
+  <meta property="og:image" content="assets/img/og-image.svg">
   <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260929">
 </head>
-<body data-page="nosotras">
+<body data-page="nosotras" class="has-hero">
   <div data-component="header"></div>
 
   <main id="contenido">
-    <section class="page-hero container">
-      <p class="eyebrow eyebrow-slash reveal">Nosotras</p>
-      <h1 class="reveal">Dos hermanas, <em>mil historias</em></h1>
-      <p class="reveal">Amaré nació en una mesa de cocina en Tigre, entre fotos impresas, tijeras y mate.</p>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="container story">
-        <div class="story-media reveal"><img src="assets/img/nosotras.svg" alt="Las hermanas fundadoras de Amaré Studio con un álbum" width="1000" height="1250"></div>
-        <div class="story-copy reveal" style="--d:120ms">
-          <p class="eyebrow">Nuestra historia</p>
-          <h2>Empezó con un <em>regalo</em></h2>
-          <p>Para el cumpleaños de mamá quisimos regalarle algo que no fuera a parar a un cajón. Juntamos fotos de toda la familia, las imprimimos, las ordenamos por capítulos y armamos a mano nuestro primer álbum.</p>
-          <p>Cuando lo abrió, lloró. Y nosotras también. Ahí entendimos que las fotos en el celular no se miran: los álbumes, sí.</p>
-          <p>Hoy diseñamos y producimos álbumes para parejas, familias, egresados y viajeros de todo el país, y creamos plantillas para quienes prefieren armarlo con sus propias manos.</p>
-          <p class="signature">Sofi &amp; Cande</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-rose quote-band">
-      <div class="container reveal">
-        <blockquote>“Queremos que cada álbum sea ese objeto que, dentro de veinte años, alguien saque de un estante y diga: <em>mirá esto</em>.”</blockquote>
+    <section class="page-banner">
+      <img src="assets/img/taller.svg" alt="" width="1600" height="1100">
+      <div class="page-banner-inner">
+        <nav class="banner-crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Nosotras</span></nav>
+        <h1>Nosotras</h1>
       </div>
     </section>
 
     <section class="section">
-      <div class="container story reverse">
-        <div class="story-media reveal"><img src="assets/img/taller.svg" alt="Mesa del taller con álbumes en producción" width="1400" height="900" loading="lazy"></div>
-        <div class="story-copy reveal" style="--d:120ms">
-          <p class="eyebrow">El taller</p>
-          <h2>Hecho a mano, <em>página por página</em></h2>
-          <p>Cada álbum pasa por nuestras manos: elegimos el papel, revisamos el color de cada foto, forramos las tapas y grabamos los nombres uno por uno.</p>
-          <p>Trabajamos con proveedores locales y embalamos todo en cajas reutilizables, con una tarjeta escrita a mano.</p>
-          <a class="btn btn-primary" href="tienda.html">Ver los álbumes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="container intro is-reverse">
+        <div class="intro-media reveal">
+          <img src="assets/img/nosotras.svg" alt="Las hermanas fundadoras de Amaré Studio con un álbum" width="1000" height="1250">
+          <a class="video-chip" href="index.html#por-dentro"><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span> Ver un álbum</a>
+        </div>
+        <div class="intro-body">
+          <div class="intro-card reveal" style="--d:120ms">
+            <p class="eyebrow eyebrow-slash">Nuestra historia</p>
+            <h2>Empezó con un <em>regalo</em></h2>
+            <p>Para el cumpleaños de mamá quisimos regalarle algo que no fuera a parar a un cajón. Juntamos fotos de toda la familia, las ordenamos por capítulos y armamos a mano nuestro primer álbum.</p>
+            <p>Cuando lo abrió, lloró. Y nosotras también. Ahí entendimos que las fotos en el celular no se miran: los álbumes, sí.</p>
+            <a class="btn btn-dark" href="tienda.html">Ver los álbumes</a>
+          </div>
+          <div class="counters reveal" style="--d:220ms">
+            <div class="counter"><strong><span data-count="4">4</span><em>+</em></strong><small>Años creando recuerdos</small></div>
+            <div class="counter"><strong><span data-count="1375">1.375</span><em>+</em></strong><small>Álbumes entregados</small></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section section-alt">
-      <div class="container">
-        <div class="section-head reveal"><p class="eyebrow">Lo que nos mueve</p><h2>Nuestros <em>valores</em></h2></div>
+      <div class="container values-layout">
+        <div class="values-intro reveal">
+          <p class="eyebrow eyebrow-slash">Lo que nos mueve</p>
+          <h2>Por qué <em>elegirnos</em></h2>
+          <p>Hacemos pocos álbumes a la vez, con tiempo y con cariño. Así nos aseguramos de que cada uno quede como lo soñaste.</p>
+          <a class="btn btn-dark" href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+        </div>
         <div class="values">
-          <article class="value reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><h3>Emoción</h3><p>Diseñamos para ese momento en que alguien abre el regalo.</p></article>
+          <article class="value reveal" style="--d:0ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><h3>Emoción</h3><p>Diseñamos para ese momento en que alguien abre el regalo.</p></article>
           <article class="value reveal" style="--d:80ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4-2L4 14.8a1.5 1.5 0 0 1 2.2-2L8 14.5"/></svg><h3>Hecho a mano</h3><p>Nada sale del taller sin que lo revisemos nosotras.</p></article>
           <article class="value reveal" style="--d:160ms"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><h3>Para siempre</h3><p>Materiales nobles, pensados para durar generaciones.</p></article>
           <article class="value reveal" style="--d:240ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4c2.5 2.5 3.5 5 3.5 8s-1 5.5-3.5 8c-2.5-2.5-3.5-5-3.5-8s1-5.5 3.5-8Z"/><circle cx="12" cy="12" r="8"/></svg><h3>Cercanía</h3><p>Te acompañamos por WhatsApp de principio a fin.</p></article>
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container award">
+        <div class="award-media reveal">
+          <img src="assets/img/hero-4.svg" alt="Álbum de viaje abierto en el taller" width="1600" height="1100" loading="lazy">
+          <div class="award-quote">“Queremos que cada álbum sea ese objeto que, dentro de veinte años, alguien saque de un estante y diga: mirá esto.”<strong>Sofi &amp; Cande</strong></div>
+        </div>
+        <div class="reveal" style="--d:120ms">
+          <p class="eyebrow eyebrow-slash">El taller</p>
+          <h2>Hecho a mano, <em>página por página</em></h2>
+          <p class="muted">Cada álbum pasa por nuestras manos: elegimos el papel, revisamos el color de cada foto, forramos las tapas y grabamos los nombres uno por uno. Trabajamos con proveedores locales y embalamos todo en cajas reutilizables, con una tarjeta escrita a mano.</p>
+          <p class="signature">Sofi &amp; Cande</p>
+          <p class="muted" style="font-size:.85rem">Fundadoras de Amaré Studio</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container team">
+        <div class="team-intro reveal">
+          <p class="eyebrow eyebrow-slash">Nosotras</p>
+          <h2>Dos hermanas detrás de <em>cada álbum</em></h2>
+          <p>Somos Sofi y Cande. Diseñamos, imprimimos y encuadernamos cada álbum en nuestro taller de Tigre, y te acompañamos por WhatsApp desde que elegís el diseño hasta que lo abrís.</p>
+          <a class="btn btn-dark" href="nosotras.html">Conocenos</a>
+        </div>
+        <div class="team-cards">
+          <article class="team-card reveal">
+            <div class="team-card-img"><img src="assets/img/hermana-1.svg" alt="Sofi, cofundadora de Amaré Studio" width="800" height="1000" loading="lazy"></div>
+            <div class="team-card-name"><strong>Sofi</strong><small>Diseño y edición</small></div>
+          </article>
+          <article class="team-card reveal" style="--d:120ms">
+            <div class="team-card-img"><img src="assets/img/hermana-2.svg" alt="Cande, cofundadora de Amaré Studio" width="800" height="1000" loading="lazy"></div>
+            <div class="team-card-name"><strong>Cande</strong><small>Producción y envíos</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Por qué comprar en Amaré">
+      <div class="container">
+        <ul class="trust-list">
+          <li class="reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><strong>Envíos a todo el país</strong><span>Gratis desde $120.000</span></div></li>
+          <li class="reveal" style="--d:100ms"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><strong>Pago seguro</strong><span>Mercado Pago, hasta 3 cuotas</span></div></li>
+          <li class="reveal" style="--d:200ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11V5a1.5 1.5 0 0 1 3 0v6M14 11V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4-2L4 14.8a1.5 1.5 0 0 1 2.2-2L8 14.5"/></svg><div><strong>Hecho a mano en Argentina</strong><span>En nuestro taller de Tigre</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container reveal">
+        <div>
+          <h2>¿Lista para armar <em>el tuyo</em>?</h2>
+          <p>Contanos tu historia y te ayudamos a elegir el álbum ideal.</p>
+        </div>
+        <div><a class="btn btn-ghost-light" href="contacto.html">Escribinos</a></div>
+      </div>
+    </section>
+
   </main>
 
   <div data-component="footer"></div>

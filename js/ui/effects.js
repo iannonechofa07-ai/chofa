@@ -243,7 +243,61 @@
     });
   }
 
+  // --------------------------------------------- contadores (count-up) --
+  function initCounters() {
+    var els = document.querySelectorAll("[data-count]");
+    if (!els.length) return;
+    function run(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = "1";
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var start = performance.now();
+      var dur = 1600;
+      var fmt = new Intl.NumberFormat("es-AR");
+      (function tick(now) {
+        var t = Math.min(1, (now - start) / dur);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = fmt.format(Math.round(target * eased));
+        if (t < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+    if (!("IntersectionObserver" in window)) { els.forEach(run); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.01 });
+    els.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { els.forEach(run); }, 6000);
+  }
+
+  // --------------------------------------------------- slider testimonios --
+  function initTestimonials() {
+    var root = document.querySelector("[data-testi]");
+    if (!root || root.dataset.bound) return;
+    root.dataset.bound = "1";
+    var slides = root.querySelectorAll(".testi-slide");
+    var dotsWrap = root.querySelector(".testi-dots");
+    var i = 0, timer;
+    slides.forEach(function (_, k) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Ver testimonio " + (k + 1));
+      b.addEventListener("click", function () { go(k); start(); });
+      dotsWrap.appendChild(b);
+    });
+    var dots = dotsWrap.querySelectorAll("button");
+    function go(k) {
+      slides[i].classList.remove("is-active"); dots[i].classList.remove("is-active");
+      i = (k + slides.length) % slides.length;
+      slides[i].classList.add("is-active"); dots[i].classList.add("is-active");
+    }
+    function start() { clearInterval(timer); timer = setInterval(function () { go(i + 1); }, 6500); }
+    go(0);
+    start();
+  }
+
   A.effects = {
+    initCounters: initCounters,
+    initTestimonials: initTestimonials,
     initHeader: initHeader,
     initMobileMenu: initMobileMenu,
     initReveal: initReveal,

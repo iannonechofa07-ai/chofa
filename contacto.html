@@ -5,51 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Contacto · Amaré Studio</title>
   <meta name="description" content="Escribinos para armar tu álbum personalizado.">
-  <meta name="theme-color" content="#F5EFE6">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Contacto · Amaré Studio">
+  <meta property="og:description" content="Escribinos para armar tu álbum personalizado.">
+  <meta property="og:image" content="assets/img/og-image.svg">
   <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260929">
 </head>
-<body data-page="contacto">
+<body data-page="contacto" class="has-hero">
   <div data-component="header"></div>
 
   <main id="contenido">
-    <section class="page-hero container">
-      <p class="eyebrow eyebrow-slash reveal">Contacto</p>
-      <h1 class="reveal">Contanos tu <em>historia</em></h1>
-      <p class="reveal">¿Querés un álbum a medida, precios para grupos o tenés una duda? Escribinos.</p>
+    <section class="page-banner">
+      <img src="assets/img/hero-1.svg" alt="" width="1600" height="1100">
+      <div class="page-banner-inner">
+        <nav class="banner-crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Contacto</span></nav>
+        <h1>Contacto</h1>
+      </div>
     </section>
-    <div class="container contact-layout">
-      <aside class="contact-card reveal">
-        <h2>Hablemos</h2>
-        <p>Respondemos de lunes a viernes de 9 a 18 h. Por WhatsApp, casi siempre al toque.</p>
-        <ul class="contact-list">
-          <li><a href="https://wa.me/5491100000000" data-whatsapp target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20Z"/></svg> WhatsApp · 11 0000-0000</a></li>
-          <li><a href="mailto:hola@amarestudio.com.ar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg> hola@amarestudio.com.ar</a></li>
-          <li><a href="https://instagram.com/amarestudio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg> @amarestudio</a></li>
-          <li><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Tigre, Buenos Aires</span></li>
-        </ul>
-      </aside>
-      <form class="contact-form reveal" data-contact-form novalidate style="--d:120ms">
-        <div class="grid-2">
-          <div class="field"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" required autocomplete="name"></div>
-          <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="c-tel">WhatsApp <span class="optional">(opcional)</span></label><input id="c-tel" name="telefono" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="c-motivo">Motivo</label>
-            <select id="c-motivo" name="motivo">
-              <option value="disenio">Quiero armar mi álbum</option>
-              <option value="pedido">Consulta sobre un pedido</option>
-              <option value="grupos">Precios para grupos / egresados</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
+    <section class="contact-block" id="contacto">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow eyebrow-slash">Contacto</p>
+          <h2>Escribinos y <em>armemos</em> el tuyo</h2>
+          <p class="contact-sub">Contanos para quién es, la ocasión y cuántas fotos tenés. Respondemos de lunes a viernes de 9 a 18 h.</p>
+          <ul class="contact-list">
+            <li><a href="https://wa.me/5491100000000" data-whatsapp target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20Z"/></svg> WhatsApp · 11 0000-0000</a></li>
+            <li><a href="mailto:hola@amarestudio.com.ar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg> hola@amarestudio.com.ar</a></li>
+            <li><a href="https://instagram.com/amarestudio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg> @amarestudio</a></li>
+            <li><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Tigre, Buenos Aires · envíos a todo el país</span></li>
+          </ul>
         </div>
-        <div class="field"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required placeholder="Contanos para quién es, la ocasión y cuántas fotos tenés más o menos."></textarea></div>
-        <button class="btn btn-primary" type="submit"><span class="btn-label">Enviar mensaje</span></button>
-      </form>
-    </div>
+        <form class="contact-form reveal" data-contact-form novalidate style="--d:120ms">
+          <div class="grid-2">
+            <div class="field"><label for="c-nombre">Nombre</label><input id="c-nombre" name="nombre" required autocomplete="name"></div>
+            <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="c-tel">WhatsApp <span class="optional">(opcional)</span></label><input id="c-tel" name="telefono" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="c-motivo">Motivo</label>
+              <select id="c-motivo" name="motivo">
+                <option value="disenio">Quiero armar mi álbum</option>
+                <option value="pedido">Consulta sobre un pedido</option>
+                <option value="grupos">Precios para grupos / egresados</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" required placeholder="Contanos para quién es, la ocasión y cuántas fotos tenés más o menos."></textarea></div>
+          <button class="btn btn-primary" type="submit"><span class="btn-label">Enviar mensaje</span></button>
+        </form>
+      </div>
+    </section>
+    <iframe class="map-embed" title="Mapa: Tigre, Buenos Aires" src="https://www.google.com/maps?q=Tigre,+Buenos+Aires&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
   </main>
 
   <div data-component="footer"></div>

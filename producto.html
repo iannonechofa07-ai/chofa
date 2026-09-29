@@ -5,20 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Álbum · Amaré Studio</title>
   <meta name="description" content="Álbum de fotos personalizado de Amaré Studio.">
-  <meta name="theme-color" content="#F5EFE6">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Álbum · Amaré Studio">
+  <meta property="og:description" content="Álbum de fotos personalizado de Amaré Studio.">
+  <meta property="og:image" content="assets/img/og-image.svg">
   <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260929">
 </head>
-<body data-page="producto">
+<body data-page="producto" class="has-hero">
   <div data-component="header"></div>
 
   <main id="contenido">
+    <section class="page-banner">
+      <img src="assets/img/hero-1.svg" alt="" width="1600" height="1100">
+      <div class="page-banner-inner">
+        <nav class="banner-crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span data-banner-crumb>Álbum</span></nav>
+        <h1 data-banner-title>Álbum</h1>
+      </div>
+    </section>
     <div data-product-root>
-      <div class="container page-top"><p class="muted">Cargando álbum…</p></div>
+      <div class="container section-tight"><p class="muted">Cargando álbum…</p></div>
     </div>
+    <section class="cta-band">
+      <div class="container reveal">
+        <div>
+          <h2>¿Querés un diseño <em>a medida</em>?</h2>
+          <p>Si ninguno es exactamente lo que imaginás, lo diseñamos juntas.</p>
+        </div>
+        <div><a class="btn btn-ghost-light" href="contacto.html?motivo=disenio">Hablemos</a></div>
+      </div>
+    </section>
+
   </main>
 
   <div data-component="footer"></div>
