@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250" role="img"><title>Plantilla Nuestra Historia impresa y encuadernada</title><defs>
+<filter id="nuestrahisdgrain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/>
+  <feColorMatrix type="matrix" values="0 0 0 0 .29  0 0 0 0 .2  0 0 0 0 .16  0 0 0 .07 0"/>
+  <feComposite in2="SourceGraphic" operator="in"/>
+</filter>
+<filter id="nuestrahisdshadow" x="-20%" y="-20%" width="140%" height="150%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+  <feOffset dx="10" dy="22"/>
+  <feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer>
+  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="nuestrahisdsoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
+<linearGradient id="nuestrahisdspine" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#000" stop-opacity="0"/>
+  <stop offset=".44" stop-color="#4A3228" stop-opacity=".05"/>
+  <stop offset=".5" stop-color="#4A3228" stop-opacity=".22"/>
+  <stop offset=".56" stop-color="#4A3228" stop-opacity=".05"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="1000" height="1250" fill="#EFE5DA"/><rect width="1000" height="1250" fill="#EFE5DA" filter="url(#nuestrahisgrain)"/><g opacity=".26" filter="url(#nuestrahissoft)" transform="rotate(-36 500.0 625.0)"><rect x="100" y="-500" width="110" height="2375" fill="#FFFDF8"/><rect x="300" y="-500" width="110" height="2375" fill="#FFFDF8"/><rect x="500" y="-500" width="110" height="2375" fill="#FFFDF8"/><rect x="700" y="-500" width="110" height="2375" fill="#FFFDF8"/></g><g transform="translate(500 620) rotate(-4)" filter="url(#nuestrahisdshadow)"><rect x="-414" y="-282.0" width="828" height="564" rx="10" fill="#B98B84"/><rect x="-404.5" y="-267.0" width="809" height="540" rx="3" fill="#EFE7DA"/><rect x="-403.0" y="-268.0" width="806" height="540" rx="3" fill="#EFE7DA"/><rect x="-401.5" y="-269.0" width="803" height="540" rx="3" fill="#EFE7DA"/><rect x="-400" y="-270.0" width="400" height="540" rx="2" fill="#FFFCF6"/><rect x="0" y="-270.0" width="400" height="540" rx="2" fill="#FFFDF8"/><text x="-200.0" y="-32.400000000000006" text-anchor="middle" font-family="'Cormorant Garamond', 'Fraunces', Georgia, 'Times New Roman', serif" font-size="48" fill="#4A3228">Nuestra Historia</text><text x="-200.0" y="10.800000000000011" text-anchor="middle" font-family="'Cormorant Garamond', 'Fraunces', Georgia, 'Times New Roman', serif" font-style="italic" font-size="24" fill="#8A6B5C">editala a tu manera</text><rect x="-248.0" y="43.19999999999999" width="96.0" height="2" fill="#B8975A"/><svg x="46.800000000000004" y="-223.2" width="306.4" height="446.4" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><g><defs><linearGradient id="nuestrahisdas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C6B4"/><stop offset="1" stop-color="#F8E4D2"/></linearGradient></defs><rect width="160" height="120" fill="url(#nuestrahisdas)"/><circle cx="80" cy="74" r="20" fill="#FCE9D6" opacity=".9"/><rect y="80" width="160" height="40" fill="#C99A8A"/><rect y="80" width="160" height="3" fill="#E7C0AE"/><path d="M0 104 Q80 96 160 104 V120 H0Z" fill="#E6CDB5"/><g fill="#4A3228"><circle cx="70" cy="70" r="4.2"/><path d="M64 104 L65.5 76 Q70 73 74.5 76 L76 104Z"/><circle cx="88" cy="68" r="4.4"/><path d="M82 104 L83 75 Q88 72 93 75 L94 104Z"/><path d="M74 84 Q79 88 84 84" stroke="#4A3228" stroke-width="2.2" fill="none"/></g></g><rect width="160" height="120" fill="#fff" opacity=".04"/></svg><rect x="-200.0" y="-270.0" width="400" height="540" fill="url(#nuestrahisdspine)"/></g></svg>

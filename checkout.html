@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Checkout · Amaré Studio</title>
+  <meta name="description" content="Finalizá tu compra en Amaré Studio.">
+  <meta name="theme-color" content="#F5EFE6">
+  <link rel="icon" href="assets/favicon.svg?v=20260929" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260929">
+</head>
+<body data-page="checkout">
+  <div data-component="header"></div>
+
+  <main id="contenido">
+    <section class="container page-top">
+      <p class="eyebrow eyebrow-slash">Checkout</p>
+      <h1 style="font-size:clamp(2.4rem,6vw,3.8rem)">Finalizá tu compra</h1>
+    </section>
+    <div class="container" data-checkout>
+      <div class="checkout-layout">
+        <form novalidate>
+          <fieldset class="checkout-step">
+            <legend><span class="step-badge">1</span> Tus datos</legend>
+            <div class="grid-2">
+              <div class="field"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" required autocomplete="name"></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+              <div class="field"><label for="telefono">WhatsApp</label><input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="11 2345 6789"></div>
+              <div class="field"><label for="dni">DNI</label><input id="dni" name="dni" inputmode="numeric" pattern="[0-9]{7,8}" required placeholder="Sin puntos"></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="checkout-step" data-shipping-block>
+            <legend><span class="step-badge">2</span> Envío</legend>
+            <div class="radio-cards" data-zones></div>
+            <div class="grid-2">
+              <div class="field"><label for="direccion">Dirección</label><input id="direccion" name="direccion" data-required-if-ship autocomplete="street-address" placeholder="Calle y número"></div>
+              <div class="field"><label for="depto">Piso / depto <span class="optional">(opcional)</span></label><input id="depto" name="depto"></div>
+              <div class="field"><label for="localidad">Localidad</label><input id="localidad" name="localidad" data-required-if-ship autocomplete="address-level2"></div>
+              <div class="field"><label for="cp">Código postal</label><input id="cp" name="cp" data-required-if-ship autocomplete="postal-code" inputmode="numeric"></div>
+            </div>
+            <div class="field"><label for="notas">Notas para el envío o la dedicatoria <span class="optional">(opcional)</span></label><textarea id="notas" name="notas" rows="3" style="min-height:90px"></textarea></div>
+          </fieldset>
+
+          <fieldset class="checkout-step">
+            <legend><span class="step-badge">3</span> Pago</legend>
+            <div class="mp-box">
+              <span class="mp-logo" aria-hidden="true">MP</span>
+              <p><strong>Mercado Pago</strong>Tarjeta de crédito, débito, dinero en cuenta o efectivo. Hasta 3 cuotas sin interés.</p>
+            </div>
+            <button class="btn btn-mp btn-block" type="submit"><span class="btn-label">Pagar con Mercado Pago</span></button>
+            <p class="secure-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Pago 100% seguro. No guardamos datos de tu tarjeta.</p>
+          </fieldset>
+        </form>
+        <aside class="order-summary-wrap">
+          <div class="order-summary">
+            <h2>Tu pedido</h2>
+            <div data-summary></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script defer src="js/config.js?v=20260929"></script>
+  <script defer src="js/data/products.js?v=20260929"></script>
+  <script defer src="js/services/catalog.js?v=20260929"></script>
+  <script defer src="js/cart.js?v=20260929"></script>
+  <script defer src="js/ui/components.js?v=20260929"></script>
+  <script defer src="js/ui/cart-drawer.js?v=20260929"></script>
+  <script defer src="js/ui/effects.js?v=20260929"></script>
+  <script defer src="js/pages/checkout.js?v=20260929"></script>
+  <script defer src="js/main.js?v=20260929"></script>
+</body>
+</html>

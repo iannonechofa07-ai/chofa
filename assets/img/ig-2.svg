@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img"><title>Publicación de Instagram de Amaré Studio</title><defs>
+<filter id="ig2grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/>
+  <feColorMatrix type="matrix" values="0 0 0 0 .29  0 0 0 0 .2  0 0 0 0 .16  0 0 0 .07 0"/>
+  <feComposite in2="SourceGraphic" operator="in"/>
+</filter>
+<filter id="ig2shadow" x="-20%" y="-20%" width="140%" height="150%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+  <feOffset dx="10" dy="22"/>
+  <feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer>
+  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="ig2soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
+<linearGradient id="ig2spine" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#000" stop-opacity="0"/>
+  <stop offset=".44" stop-color="#4A3228" stop-opacity=".05"/>
+  <stop offset=".5" stop-color="#4A3228" stop-opacity=".22"/>
+  <stop offset=".56" stop-color="#4A3228" stop-opacity=".05"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0"/>
+</linearGradient>
+</defs><rect width="800" height="800" fill="#EBD9D2"/><rect width="800" height="800" fill="#EBD9D2" filter="url(#ig2grain)"/><g opacity=".26" filter="url(#ig2soft)" transform="rotate(-14 400.0 400.0)"><rect x="80" y="-320" width="88" height="1520" fill="#FFFDF8"/><rect x="240" y="-320" width="88" height="1520" fill="#FFFDF8"/><rect x="400" y="-320" width="88" height="1520" fill="#FFFDF8"/><rect x="560" y="-320" width="88" height="1520" fill="#FFFDF8"/></g><g transform="translate(400 410) rotate(4)" filter="url(#ig2shadow)"><rect x="-182.0" y="-234.0" width="380" height="480" rx="8" fill="#EDE4D6"/><rect x="-190.0" y="-240.0" width="380" height="480" rx="8" fill="#E3C2BC"/><rect x="-190.0" y="-240.0" width="380" height="480" rx="8" fill="#E3C2BC" filter="url(#ig2grain)"/><rect x="-190.0" y="-240.0" width="26.6" height="480" rx="8" fill="#000" opacity=".08"/><rect x="-163.4" y="-240.0" width="2" height="480" fill="#000" opacity=".1"/><rect x="-129.2" y="-192.0" width="273.59999999999997" height="384.0" fill="none" stroke="#B8975A" stroke-width="1.6" opacity=".85"/><rect x="-83.216" y="-151.92000000000002" width="181.63199999999998" height="198.59519999999998" fill="#FFFCF6" opacity=".9"/><svg x="-77.216" y="-145.92000000000002" width="169.63199999999998" height="186.59519999999998" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><g><defs><linearGradient id="ig2ws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C6B4"/><stop offset="1" stop-color="#F8E4D2"/></linearGradient></defs><rect width="160" height="120" fill="url(#ig2ws)"/><circle cx="80" cy="74" r="20" fill="#FCE9D6" opacity=".9"/><rect y="80" width="160" height="40" fill="#C99A8A"/><rect y="80" width="160" height="3" fill="#E7C0AE"/><path d="M0 104 Q80 96 160 104 V120 H0Z" fill="#E6CDB5"/><g fill="#4A3228"><circle cx="70" cy="70" r="4.2"/><path d="M64 104 L65.5 76 Q70 73 74.5 76 L76 104Z"/><circle cx="88" cy="68" r="4.4"/><path d="M82 104 L83 75 Q88 72 93 75 L94 104Z"/><path d="M74 84 Q79 88 84 84" stroke="#4A3228" stroke-width="2.2" fill="none"/></g></g><rect width="160" height="120" fill="#fff" opacity=".04"/></svg><text x="7.599999999999994" y="88.67519999999996" text-anchor="middle" font-family="'Cormorant Garamond', 'Fraunces', Georgia, 'Times New Roman', serif" font-size="32" fill="#F5EFE6" letter-spacing="1">Amaré</text></g><g transform="translate(690 110)"><circle r="58.0" fill="#FBF7F1" opacity=".95"/><circle r="58.0" fill="none" stroke="#E4D6C6" stroke-width="2"/><circle r="40" fill="#FFFCF7"/><circle r="31.200000000000003" fill="#6E4A38"/><circle r="31.200000000000003" fill="none" stroke="#8C6450" stroke-width="3"/><ellipse cx="-8.0" cy="-10.0" rx="12.0" ry="5.6000000000000005" fill="#C8A58A" opacity=".5"/><rect x="36.800000000000004" y="-12" width="20.0" height="24" rx="12" fill="#FFFCF7"/></g></svg>
