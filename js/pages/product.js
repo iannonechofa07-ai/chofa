@@ -1,7 +1,7 @@
 /* ==========================================================================
    Ficha de producto: galería, variantes, personalización, envío,
    acordeón de información y productos relacionados.
-   URL: producto.html?p=<slug>
+   URL: producto.html#<slug>
    ========================================================================== */
 (function () {
   "use strict";
@@ -13,7 +13,9 @@
     if (!root || root.dataset.bound) return;
     root.dataset.bound = "1";
 
-    var slug = new URLSearchParams(location.search).get("p") || "nuestra-historia";
+    var slug = A.ui.pageParam("p") || "nuestra-historia";
+    // Un link a otro producto desde esta misma página solo cambia el #: recargar.
+    window.addEventListener("hashchange", function () { location.reload(); });
     A.catalog.getBySlug(slug).then(function (p) {
       if (!p) { notFound(root); return; }
       render(root, p);
@@ -97,7 +99,7 @@
     var bTitle = document.querySelector("[data-banner-title]");
     var bCrumb = document.querySelector("[data-banner-crumb]");
     if (bTitle) bTitle.textContent = p.name;
-    if (bCrumb) bCrumb.innerHTML = '<a href="tienda.html?tipo=' + p.type + '">' + type.label + '</a> <span aria-hidden="true">/</span> ' + ui.esc(p.name);
+    if (bCrumb) bCrumb.innerHTML = '<a href="tienda.html#' + p.type + '">' + type.label + '</a> <span aria-hidden="true">/</span> ' + ui.esc(p.name);
 
     root.innerHTML =
       '<div class="container section-tight">' +
@@ -108,7 +110,7 @@
       "    </div>" +
       '    <form class="product-buy reveal" data-buy style="--d:120ms">' +
       '      <p class="product-kicker"><span class="type-badge type-' + p.type + ' is-inline">' + (isPhysical ? ui.icons.truck : ui.icons.download) + type.label + "</span>" +
-      (occasion ? '<a href="tienda.html?ocasion=' + occasion.id + '">' + ui.esc(occasion.label) + "</a>" : "") + "</p>" +
+      (occasion ? '<a href="tienda.html#' + occasion.id + '">' + ui.esc(occasion.label) + "</a>" : "") + "</p>" +
       "      <h1>" + ui.esc(p.name) + "</h1>" +
       '      <p class="product-lead">' + ui.esc(p.short) + "</p>" +
       '      <p class="product-price-big"><span data-price>' + ui.formatPrice(p.price) + "</span>" +

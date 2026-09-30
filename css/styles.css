@@ -895,3 +895,9 @@ p.free-ship { display: flex; align-items: center; gap: 8px; }
 .collections-head h2 { text-transform: none; letter-spacing: 0; }
 .section-related { background: var(--bg-soft); margin-top: 0; }
 .order-success .btn-outline { margin-top: 18px; }
+.map-card { background: var(--bg-soft); padding-block: clamp(48px, 7vw, 80px); }
+.map-card-inner { display: grid; gap: 20px; align-items: center; }
+.map-card-inner > svg { width: 44px; height: 44px; color: var(--pink); stroke-width: 1.2; }
+.map-card h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: .2em; }
+.map-card p.muted { margin: 0; }
+@media (min-width: 800px) { .map-card-inner { grid-template-columns: auto 1fr auto; gap: 32px; } }

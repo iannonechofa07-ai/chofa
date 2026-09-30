@@ -9,8 +9,8 @@
     if (!form || form.dataset.bound) return;
     form.dataset.bound = "1";
 
-    // Preselecciona el motivo desde la URL (?motivo=disenio)
-    var motivo = new URLSearchParams(location.search).get("motivo");
+    // Preselecciona el motivo desde la URL (contacto.html#disenio)
+    var motivo = A.ui.pageParam("motivo");
     if (motivo) {
       var sel = form.querySelector('select[name="motivo"]');
       if (sel && sel.querySelector('option[value="' + motivo + '"]')) sel.value = motivo;

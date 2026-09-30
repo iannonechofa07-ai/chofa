@@ -27,10 +27,10 @@
     var typeLabel = A.productTypes[i.type] ? A.productTypes[i.type].label : "";
     return (
       '<li class="cart-line" data-key="' + ui.esc(i.key) + '">' +
-      '  <a class="line-img" href="producto.html?p=' + encodeURIComponent(i.slug) + '"><img src="' + i.image + '" alt="" width="80" height="100"></a>' +
+      '  <a class="line-img" href="producto.html#' + encodeURIComponent(i.slug) + '"><img src="' + i.image + '" alt="" width="80" height="100"></a>' +
       '  <div class="line-body">' +
       '    <p class="line-type">' + typeLabel + "</p>" +
-      '    <h4><a href="producto.html?p=' + encodeURIComponent(i.slug) + '">' + ui.esc(i.name) + "</a></h4>" +
+      '    <h4><a href="producto.html#' + encodeURIComponent(i.slug) + '">' + ui.esc(i.name) + "</a></h4>" +
       (meta ? '    <p class="line-meta">' + ui.esc(meta) + "</p>" : "") + perso +
       '    <div class="line-actions">' +
       '      <div class="qty qty-small">' +

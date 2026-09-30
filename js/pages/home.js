@@ -43,7 +43,7 @@
           A.effects.initReveal(grid);
         }, grid.children.length ? 220 : 0);
         var o = A.occasions.find(function (x) { return x.id === occasion; });
-        more.href = "tienda.html" + (o ? "?ocasion=" + o.id : "");
+        more.href = "tienda.html" + (o ? "#" + o.id : "");
         more.querySelector("span").textContent = o ? "Ver todo " + o.label : "Ver toda la tienda";
       });
     }

@@ -25,7 +25,17 @@
 
   function formatPrice(n) { return money.format(n).replace(/\s/g, ""); }
 
-  function productUrl(p) { return "producto.html?p=" + encodeURIComponent(p.slug); }
+  function productUrl(p) { return "producto.html#" + encodeURIComponent(p.slug); }
+
+  /**
+   * Parámetro de la página: se lee del #hash (producto.html#la-cabana,
+   * tienda.html#digital). También acepta el formato viejo con ?clave=valor.
+   */
+  function pageParam(legacyKey) {
+    var h = decodeURIComponent((location.hash || "").slice(1));
+    if (h) return h;
+    try { return new URLSearchParams(location.search).get(legacyKey) || ""; } catch (e) { return ""; }
+  }
 
   function whatsappUrl(text) {
     return "https://wa.me/" + cfg.whatsapp + "?text=" + encodeURIComponent(text || cfg.whatsappMessage);
@@ -56,7 +66,7 @@
     { href: "index.html", label: "Inicio", id: "home" },
     { href: "nosotras.html", label: "Nosotras", id: "nosotras" },
     { href: "tienda.html", label: "Tienda", id: "tienda" },
-    { href: "tienda.html?tipo=digital", label: "Plantillas Canva", id: "plantillas" },
+    { href: "tienda.html#digital", label: "Plantillas Canva", id: "plantillas" },
     { href: "preguntas-frecuentes.html", label: "Preguntas", id: "faq" },
     { href: "contacto.html", label: "Contacto", id: "contacto" }
   ];
@@ -118,8 +128,8 @@
       '        <li><a href="contacto.html">Contacto</a></li>' +
       "      </ul></div>" +
       '      <div class="footer-col"><h3>Ayuda</h3><ul>' +
-      '        <li><a href="tienda.html?tipo=fisico">Álbumes físicos</a></li>' +
-      '        <li><a href="tienda.html?tipo=digital">Plantillas Canva</a></li>' +
+      '        <li><a href="tienda.html#fisico">Álbumes físicos</a></li>' +
+      '        <li><a href="tienda.html#digital">Plantillas Canva</a></li>' +
       '        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>' +
       '        <li><a href="checkout.html">Checkout</a></li>' +
       "      </ul></div>" +
@@ -195,6 +205,7 @@
     esc: esc,
     formatPrice: formatPrice,
     productUrl: productUrl,
+    pageParam: pageParam,
     whatsappUrl: whatsappUrl,
     icons: ICONS,
     productCard: productCard,

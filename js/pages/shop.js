@@ -1,7 +1,7 @@
 /* ==========================================================================
    Tienda: grilla con filtros por tipo, ocasión y precio + orden.
-   Los filtros se reflejan en la URL (?tipo=digital&ocasion=pareja&max=20000)
-   para poder compartir un link filtrado.
+   El tipo u ocasión se puede abrir desde un link: tienda.html#digital,
+   tienda.html#fisico, tienda.html#pareja, etc.
    ========================================================================== */
 (function () {
   "use strict";
@@ -20,7 +20,19 @@
     var priceInput = form.querySelector('input[name="max"]');
     var priceOut = form.querySelector("[data-price-out]");
     var titleEl = document.querySelector("[data-shop-title]");
-    var params = new URLSearchParams(location.search);
+
+    /** Lee el filtro del #hash (o de ?tipo= / ?ocasion= para links viejos). */
+    function fromUrl() {
+      var token = A.ui.pageParam("tipo");
+      var legacyOcc = "";
+      try { legacyOcc = new URLSearchParams(location.search).get("ocasion") || ""; } catch (e) { /* nada */ }
+      var isType = token === "fisico" || token === "digital";
+      var isOcc = A.occasions.some(function (o) { return o.id === token; });
+      return {
+        tipo: isType ? token : "todos",
+        ocasion: isOcc ? token : (legacyOcc || "todas")
+      };
+    }
 
     // Chips de ocasión (a partir de los datos)
     occasionWrap.innerHTML =
@@ -36,10 +48,10 @@
       priceInput.step = step;
 
       // Estado inicial desde la URL
-      setRadio("tipo", params.get("tipo") || "todos");
-      setRadio("ocasion", params.get("ocasion") || "todas");
-      priceInput.value = params.get("max") || priceInput.max;
-      form.querySelector('select[name="orden"]').value = params.get("orden") || "destacados";
+      var start = fromUrl();
+      setRadio("tipo", start.tipo);
+      setRadio("ocasion", start.ocasion);
+      priceInput.value = priceInput.max;
       apply(false);
     });
 
@@ -58,15 +70,23 @@
       };
     }
 
+    var lastHash = "";
     function syncUrl(f) {
-      var p = new URLSearchParams();
-      if (f.type && f.type !== "todos") p.set("tipo", f.type);
-      if (f.occasion && f.occasion !== "todas") p.set("ocasion", f.occasion);
-      if (f.maxPrice && String(f.maxPrice) !== priceInput.max) p.set("max", f.maxPrice);
-      if (f.sort && f.sort !== "destacados") p.set("orden", f.sort);
-      var qs = p.toString();
-      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : ""));
+      // Un solo filtro principal en el #: primero la ocasión, si no el tipo.
+      var token = f.occasion && f.occasion !== "todas" ? f.occasion : (f.type && f.type !== "todos" ? f.type : "");
+      lastHash = token;
+      try { history.replaceState(null, "", location.pathname + (token ? "#" + token : "")); } catch (e) { /* entorno sin history */ }
     }
+
+    // El menú "Plantillas Canva" (tienda.html#digital) desde la propia tienda solo cambia el #.
+    window.addEventListener("hashchange", function () {
+      var token = decodeURIComponent(location.hash.slice(1));
+      if (token === lastHash) return;
+      var next = fromUrl();
+      setRadio("tipo", next.tipo);
+      setRadio("ocasion", next.ocasion);
+      apply(false);
+    });
 
     function apply(pushUrl) {
       var f = read();
