@@ -81,6 +81,12 @@
     root.dataset.bound = "1";
     var slides = root.querySelectorAll(".hero-slide");
     var dotsWrap = root.querySelector(".hero-dots");
+    // Con una sola imagen no hay carrusel: se muestra fija y sin puntitos.
+    if (slides.length < 2) {
+      if (slides[0]) slides[0].classList.add("is-active");
+      if (dotsWrap) dotsWrap.hidden = true;
+      return;
+    }
     var interval = parseInt(root.getAttribute("data-interval"), 10) || 5500;
     var index = 0;
     var timer = null;

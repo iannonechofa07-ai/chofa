@@ -952,3 +952,5 @@ p.free-ship { display: flex; align-items: center; gap: 8px; }
 .collections-head h2 { text-transform: uppercase; letter-spacing: var(--track-title); }
 .hero h1, .page-banner h1 { font-weight: 700; }
 .logo em { font-weight: 700; }
+/* Foto real del hero: encuadre centrado en el álbum */
+.hero-slide img[src$=".jpg"] { object-position: 50% 52%; }
